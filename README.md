@@ -29,7 +29,7 @@ By providing meal-prepping commuters with a platform to comment and share concer
 - Site Hosting: GitHub Pages
 
 
-## How it can be repurposed
+## How it can be repurposed:
 We hope the data from our mapplication will be used by community organizations like cityLAB, the organization that initiated the creation of BruinHub, and other commuter support groups to identify and address the struggles commuters who meal prep face due to the lack of convenient and accessible locations for food storage and reheating, but it can highlight the systemic gaps and inequalities in resource allocation. CityLAB  and other organizations can use the information to advocate for structural changes such as pressuring university administration to prioritize funding for more accessible meal-prep resources and equitable food storage solutions. 
 
 The information on the mapplication would also be accessible to current and future students, empowering them to navigate and demand better food storage spaces on campus. Overall, we hope the project can provide an outlet for the community to share on-campus issues related to meal-prepping food accessibility faced by students who must plan and bring their meals from home.
