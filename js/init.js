@@ -32,12 +32,12 @@ function addMarker(data) {
     let lng = data['lng'];
     let lat = data['lat'];
     let commuterStatus = data['Do you currently identify as a UCLA commuter student?'];
-    let zipCode = data['What is the zip code of the area you commute from?']; 
-    let mealPrepStatus = data['Do you meal prep ahead of time to prepare for a day on-campus?'];
-    let mealPrepReason = data['Expand on your answer above?'];
-    let fridgeAccess = data['Do you feel you have enough access to fridges for storing meals on-campus?'];
-    let microwaveAccess = data['Do you feel you have enough access to microwaves for reheating meals on-campus?'];
-    let experience = data['Expand on your experiences using refrigeration (storage) and microwave (reheating) on campus?'];
+    let zipCode = data['What is the zipcode of the area you commute from?']; 
+    let mealPrepStatus = data['Do you meal prep ahead of time to prepare for a day on campus?'];
+    let mealPrepReason = data['Expand on your answer above'];
+    let fridgeAccess = data['Do you feel you have enough access to fridges for storing meals on campus?'];
+    let microwaveAccess = data['Do you feel you have enough access to microwaves for reheating meals on campus?'];
+    let experience = data['Expand on your experiences using refrigeration (storage) and microwave (reheating) on campus, if any'];
 
     let popup_message; 
 
@@ -69,7 +69,7 @@ function addMarker(data) {
 
         popup_message += `Experience with on-campus food storage and reheating facilities: ` + experience; 
 
-        let marker = new maplibregl.Marker()
+        new maplibregl.Marker()
             .setLngLat([lng, lat])
             .setPopup(new maplibregl.Popup()
                 .setHTML(popup_message))
@@ -77,7 +77,7 @@ function addMarker(data) {
     }
 }
 
-const dataUrl = ""
+const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQZdw9auoUhxpdgUc1QknVNxCY13xLRShujnggsjg_BIDelsQR1ZbsEks9-QUyY2h0aE9vd4fAD2qC1/pub?output=csv"
 
 // When the map is fully loaded, start adding GeoJSON data
 map.on('load', function() {
@@ -91,4 +91,25 @@ map.on('load', function() {
         }
     });
 });
+
+function processData(results){
+    console.log(results) //for debugging: this can help us see if the results are what we want
+    results.forEach(feature => {
+        console.log(feature) // for debugging: are we seeing each feature correctly?
+        // assumes your geojson has a "title" and "message" attribute
+        // let coordinates = feature.geometry.coordinates;
+        let longitude = feature['lng'];
+        let latitude = feature['lat'];
+        let commuterStatus = feature['Do you currently identify as a UCLA commuter student?'];
+        let zipCode = feature['What is the zipcode of the area you commute from?']; 
+        let mealPrepStatus = feature['Do you meal prep ahead of time to prepare for a day on campus?'];
+        let mealPrepReason = feature['Expand on your answer above'];
+        let fridgeAccess = feature['Do you feel you have enough access to fridges for storing meals on campus?'];
+        let microwaveAccess = feature['Do you feel you have enough access to microwaves for reheating meals on campus?'];
+        let experience = feature['Expand on your experiences using refrigeration (storage) and microwave (reheating) on campus, if any'];
+
+        addMarker(feature);
+    });
+};
+
 

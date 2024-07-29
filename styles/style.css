@@ -64,7 +64,7 @@ header {
     height: 80vh;
     /* Sets the map's height to 80% of the viewport height */
     margin-left: 30px;
-    border: solid 3px rgb(209, 101, 0);
+    border: solid 2px rgb(212, 146, 84);
     border-radius: 30px;
 }
 
@@ -191,7 +191,7 @@ nav {
     height: 50px;
     /* Background/Border of Nav Bar */
     background-color: rgb(209, 101, 0);
-    border-bottom: 3px solid rgb(0, 69, 72);
+    border-bottom: 2px solid rgb(0, 69, 72);
 }
 
 nav .logo {
@@ -232,12 +232,12 @@ nav .links a {
 
 li a:hover:not(.active) {
     background-color: rgb(155, 67, 0);
-    border-bottom: 3px solid rgb(0, 69, 72);
+    border-bottom: 1px solid rgb(0, 69, 72);
 }
 
 .active {
-    background-color: #309b9d;
-    border-bottom: 3px solid rgb(0, 69, 72);
+    background-color: rgb(48, 155, 157);
+    border-bottom: 1px solid rgb(0, 69, 72);
 }
 
 #nav-toggle {
@@ -317,8 +317,16 @@ nav .icon-burger .line {
 
 /* About Page */
 #memo {
-    background-color: #309b9d;
+    /* background-color: rgb(48, 155, 157, 0.25); */
+    background-color: rgba(235, 255, 255, 0.25); /*Brighter Option of Above*/
+    box-shadow: 0 4px 8px 0 rgba(235, 255, 255, 0.25), 0 6px 20px 0 rgba(235, 255, 255, 0.25);
     margin-left: 30px;
-    height: 600px;
+    height: 540px;
     overflow-y: scroll;
+    padding: 30px;
+}
+
+.memo-description {
+    border: 2px solid purple;
+    padding-left: 30px;
 }
