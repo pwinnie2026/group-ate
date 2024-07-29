@@ -83,7 +83,6 @@ header {
 
 /* Modal */
 .modal {
-    border: 2px solid red;
     position: fixed;
     display: block;
     z-index: 999999999999;
@@ -101,7 +100,6 @@ header {
 }
 
 .header-container {
-    border: 2px solid red;
     background-color: lightsalmon;
     height: 130px;
 }
@@ -119,7 +117,6 @@ header {
 }
 
 .main-container {
-    border: 2px solid red;
     background-color: beige;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -136,7 +133,6 @@ header {
 }
 
 .footer-container {
-    border: 2px solid red;
     background-color: lavender;
     padding-top: 10px;
     padding-bottom: 10px;
