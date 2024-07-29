@@ -13,6 +13,18 @@ window.onclick = function (event) {
     }
 }
 
+// MODAL ^^^
+
+// Adding markers to map from Google Form
+function addMarker(data) {
+    let popup_message; 
+    let lng = data['lng']
+    let lat = data['lat']
+
+    if (data)
+}
+
+
 // declare variables
 let mapOptions = {'centerLngLat': [-118.444,34.0709],'startingZoomLevel':8}
 
@@ -22,3 +34,4 @@ const map = new maplibregl.Map({
     center: mapOptions.centerLngLat, // Starting position [lng, lat]
     zoom: mapOptions.startingZoomLevel // Starting zoom level
 });
+
