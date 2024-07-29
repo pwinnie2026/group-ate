@@ -48,7 +48,7 @@ List the ready features here:
 
 
 ## Acknowledgements
-We couldn't have created this project without the support of many people. Thank you to Professor Albert Kochaphum for guiding us through every process and being a fantastic professor! Thank you to the class of AAS 191A Summer 2024 Session A class for taking part in our project through survey participation and words of encouragement!
+We couldn't have created this project without the support of many people. Thank you to Professor Albert Kochaphum for guiding us through every process and being a fantastic professor! Thank you to the AAS 191A Summer 2024 Session A class for participating in our project through the survey and words of encouragement!
 
 
 ## Contact Information
