@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Group-ATE: Food Prep Storage</title>
+    
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="#">
+
+    <!-- Style.CSS Linkage -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Website Icon -->
+    <link rel="icon" href="photo/smiskiicon.png">
+
+    <!-- MapLibreGL's CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
+
+    <!-- MapLibreGL's JavaScript-->
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+</head>
+
+<body>
+    <header>
+        <br>
+        we're at ucla!
+        <!-- hint: you can make a menu with other links here if you'd like -->
+        <nav class="css-selector">
+            <!-- Navigation Bar w/ Jumplinks -->
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo">
+                <img class="logo" src="photo/smiskilogo.png">
+            </div>
+            <!-- Jumplinks -->
+            <ul class="links">
+                <li><a href="./index.html">visit the map</a></li>
+                <li><a href="./about.html">about the project</a></li>
+                <li><a href="./survey.html">share your story</a></li>
+            </ul>
+            <!--Icon Burger-->
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+        </nav>
+    </header>
+
+    <main>
+        <div id="map"></div>
+    </main>
+    <div id="footer">
+        Copyright(2024)
+    </div>
+    <script src="js/init.js"></script>
+</body>
+
+</html>
