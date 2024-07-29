@@ -12,9 +12,8 @@
 
 /* Sets the background color of the whole page and ensures content fits the screen height */
 html {
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-}
+    background: rgb(238,210,174);
+    background: radial-gradient(circle, rgba(238,210,174,1) 17%, rgba(148,223,233,1) 100%);}
 
 /* Applies to both <html> and <body> */
 html,
@@ -49,13 +48,13 @@ header {
     padding-left: 30px;
     font-size: 30px;
     font-weight: 800;
-    color: rgb(24, 96, 15);
+    color: rgb(0, 69, 72);
 }
 
 #project-title {
     font-size: 30px;
     font-weight: 800;
-    color: rgb(24, 96, 15);
+    color: rgb(0, 69, 72);
 }
 
 #map {
@@ -65,7 +64,7 @@ header {
     height: 80vh;
     /* Sets the map's height to 80% of the viewport height */
     margin-left: 30px;
-    border: solid 5px #b3855d;
+    border: solid 3px rgb(209, 101, 0);
     border-radius: 30px;
 }
 
@@ -74,7 +73,7 @@ header {
     padding-top: 5px;
     /* Adds padding for better spacing */
     margin-top: 30px;
-    background-color: #b3855d;
+    background-color: rgb(209, 101, 0);
     /* Sets a dark background for contrast */
     color: #fff;
     /* Ensures text is readable against the dark background */
@@ -97,11 +96,12 @@ header {
 }
 
 .modal-content {
-    border: 2px solid red;
+    border: 2px solid rgb(212, 146, 84);
 }
 
 .header-container {
-    background-color: lightsalmon;
+    background-color: rgb(232, 178, 128);
+    border-bottom: 2px solid rgb(212, 146, 84);
     height: 130px;
 }
 
@@ -118,13 +118,14 @@ header {
 }
 
 .main-container {
-    background-color: beige;
+    background-color: rgb(240, 234, 226);
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
     padding-right: 30px;
     height: 150px;
     overflow-y: scroll;
+    border-bottom: 2px solid rgb(212, 146, 84);
 }
 
 #modal-objectives {
@@ -134,7 +135,7 @@ header {
 }
 
 .footer-container {
-    background-color: lavender;
+    background-color: rgb(238,210,174);
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
@@ -144,19 +145,19 @@ header {
 
 p {
     font-size: 15px;
-    color: rgb(44, 90, 11);
+    color: rgb(0, 69, 72);
 }
 
 h2 {
     font-weight: 600;
-    color: rgb(44, 90, 11);
+    color: rgb(0, 69, 72);
     padding-bottom: 5px;
 }
 
 h3 {
     font-size: 30px;
     font-weight: 800;
-    color: rgb(44, 90, 11);
+    color: rgb(0, 69, 72);
     padding-bottom: 5px;
 }
 
@@ -164,9 +165,8 @@ button {
     font-weight: 600;
     font-size: 20px;
     cursor: grab;
-    color: rgb(87, 154, 39);
     padding: 5px;
-    border: solid 3px #b3855d;
+    border: solid 3px rgb(209, 101, 0);
     border-radius: 5px;
 }
 
@@ -190,8 +190,8 @@ nav {
     padding: 0 5%;
     height: 50px;
     /* Background/Border of Nav Bar */
-    background-color: #b3855d;
-    border-bottom: 3px solid rgb(24, 96, 15);
+    background-color: rgb(209, 101, 0);
+    border-bottom: 3px solid rgb(0, 69, 72);
 }
 
 nav .logo {
@@ -202,7 +202,7 @@ nav .logo {
     align-items: center;
     /* Nav Bar logo text */
     font-size: 30px;
-    color: #FFFFE3;
+    color:  rgb(240, 234, 226);
 }
 
 nav .links {
@@ -226,18 +226,18 @@ nav .links a {
     padding: 11px;
     font-size: 18px;
     /* Nav Bar Jumplink Text */
-    color: #FFFFE3;
+    color:  rgb(240, 234, 226);
     text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
-    border-bottom: 3px solid rgb(24, 96, 15);
+    background-color: rgb(155, 67, 0);
+    border-bottom: 3px solid rgb(0, 69, 72);
 }
 
 .active {
-    background-color: #04AA6D;
-    border-bottom: 3px solid rgb(24, 96, 15);
+    background-color: #309b9d;
+    border-bottom: 3px solid rgb(0, 69, 72);
 }
 
 #nav-toggle {
@@ -257,7 +257,7 @@ nav .icon-burger {
 nav .icon-burger .line {
     width: 30px;
     height: 5px;
-    background-color: #fff;
+    background-color:  rgb(240, 234, 226);
     margin: 5px;
     border-radius: 3px;
     transition: all .3s ease-in-out;
@@ -283,7 +283,7 @@ nav .icon-burger .line {
         height: auto;
         flex-direction: column;
         justify-content: space-evenly;
-        background-color: rgba(0, 0, 0, .8);
+        background-color: rgba(0, 44, 47, 0.8);
         overflow: hidden;
         box-sizing: border-box;
         transition: all .5s ease-in-out;

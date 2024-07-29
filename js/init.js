@@ -17,11 +17,19 @@ window.onclick = function (event) {
 
 // Adding markers to map from Google Form
 function addMarker(data) {
-    let popup_message; 
-    let lng = data['lng']
-    let lat = data['lat']
+    let lng = data['lng'];
+    let lat = data['lat'];
+    let commuterStatus = data['Do you currently identify as a UCLA commuter student?'];
+    let mealPrepStatus = data['Do you meal prep ahead of time to prepare for a day on-campus?'];
+    let mealPrepReason = data['Expand on your answer above?'];
+    let fridgeAccess = data[''];
+    let microwaveAccess = data[''];
+    let experience = data[''];
 
-    if (data)
+    let popup_message; 
+    if ( == "Yes") {
+
+    }
 }
 
 
