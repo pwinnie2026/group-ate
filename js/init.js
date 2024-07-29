@@ -13,7 +13,7 @@ window.onclick = function (event) {
     }
 }
 
-// MODAL ^^^
+// MODAL ^^^    
 
 // declare variables
 let mapOptions = {'centerLngLat': [-118.444,34.0709],'startingZoomLevel':8}

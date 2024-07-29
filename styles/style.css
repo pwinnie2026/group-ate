@@ -75,7 +75,7 @@ header {
     margin-top: 30px;
     background-color: rgb(209, 101, 0);
     /* Sets a dark background for contrast */
-    color: #fff;
+    color: rgb(240, 234, 226);
     /* Ensures text is readable against the dark background */
     text-align: center;
     /* Centers the footer content */
@@ -319,7 +319,7 @@ nav .icon-burger .line {
 #memo {
     /* background-color: rgb(48, 155, 157, 0.25); */
     background-color: rgba(235, 255, 255, 0.25); /*Brighter Option of Above*/
-    box-shadow: 0 4px 8px 0 rgba(235, 255, 255, 0.25), 0 6px 20px 0 rgba(235, 255, 255, 0.25);
+    box-shadow: 0 4px 8px 0 rgba(235, 255, 255, 0.25), 0px 0px 30px 10px rgba(235, 255, 255, 0.25);
     margin-left: 30px;
     height: 540px;
     overflow-y: scroll;
@@ -331,4 +331,13 @@ nav .icon-burger .line {
 
 .memo-description {
     padding-left: 30px;
+}
+
+.memo-header {
+    color: rgb(155, 67, 0);
+}
+
+.memo-description a {
+    color: rgb(155, 67, 0);
+    text-decoration: none;
 }
