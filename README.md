@@ -1,5 +1,5 @@
 # Group ATE | Observations Regarding the Food Prep Storage of UCLA Commuter Students
-> A web-based mapplication dedicated to sharing and learning about the experiences of UCLA commuter students who meal prep.
+> A web-based mapplication dedicated to sharing and learning about the experiences of UCLA commuter students who meal prep. Additionally, we hope to share resources to help current and future students navigate the potential struggles of meal planning!
 > Access it [here](https://pwinnie2026.github.io/group-ate/index.html).
 
 
