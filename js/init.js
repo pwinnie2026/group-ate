@@ -1,10 +1,12 @@
+// MODAL  
+
 // Fetch id from HTML (modal)
 var modal = document.getElementById('modal-id');
 
-// Load modal when website loads
-window.onload = (event) => {
-    modal.style.display = "block";
-};
+// // Load modal when website loads
+// window.onload = (event) => {
+//     modal.style.display = "block";
+// };
 
 // User clicks anywhere on the screen = closes modal display
 window.onclick = function (event) {
@@ -13,10 +15,9 @@ window.onclick = function (event) {
     }
 }
 
-// MODAL ^^^    
-
+// MAP
 // declare variables
-let mapOptions = {'centerLngLat': [-118.444,34.0709],'startingZoomLevel':8}
+let mapOptions = { 'centerLngLat': [-118.444, 34.0709], 'startingZoomLevel': 8 }
 
 const map = new maplibregl.Map({
     container: 'map', // container ID
@@ -32,26 +33,26 @@ function addMarker(data) {
     let lng = data['lng'];
     let lat = data['lat'];
     let commuterStatus = data['Do you currently identify as a UCLA commuter student?'];
-    let zipCode = data['What is the zipcode of the area you commute from?']; 
+    let zipCode = data['What is the zipcode of the area you commute from?'];
     let mealPrepStatus = data['Do you meal prep ahead of time to prepare for a day on campus?'];
     let mealPrepReason = data['Expand on your answer above'];
     let fridgeAccess = data['Do you feel you have enough access to fridges for storing meals on campus?'];
     let microwaveAccess = data['Do you feel you have enough access to microwaves for reheating meals on campus?'];
     let experience = data['Expand on your experiences using refrigeration (storage) and microwave (reheating) on campus, if any'];
 
-    let popup_message; 
+    let popup_message;
 
     // Adding marker only if student is a commuter student
     if (commuterStatus == "Yes") {
-        popup_message = `Zipcode: ` + zipCode + `<br>`; 
+        popup_message = `Zipcode: ` + zipCode + `<br>`;
 
         // Information pulled from question 3 and 4 of survey for popup message of marker
         if (mealPrepStatus == "Yes") {
-            popup_message += `Does meal prep <br>`; 
+            popup_message += `Does meal prep <br>`;
             popup_message += `Meal prep storage location: ` + mealPrepReason + `<br>`;
         } else if (mealPrepStatus == "No") {
-            popup_message += `Does not meal prep <br>`; 
-            popup_message += `Reason for not meal prepping: ` + mealPrepReason + `<br>`; 
+            popup_message += `Does not meal prep <br>`;
+            popup_message += `Reason for not meal prepping: ` + mealPrepReason + `<br>`;
         }
 
         // Information pulled from questions 5 and 6 of survey for popup message of marker
@@ -67,7 +68,7 @@ function addMarker(data) {
             popup_message += `Does not have access to a microwave on campus <br><br>`;
         }
 
-        popup_message += `Experience with on-campus food storage and reheating facilities: ` + experience; 
+        popup_message += `Experience with on-campus food storage and reheating facilities: ` + experience;
 
         new maplibregl.Marker()
             .setLngLat([lng, lat])
@@ -80,19 +81,19 @@ function addMarker(data) {
 const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQZdw9auoUhxpdgUc1QknVNxCY13xLRShujnggsjg_BIDelsQR1ZbsEks9-QUyY2h0aE9vd4fAD2qC1/pub?output=csv"
 
 // When the map is fully loaded, start adding GeoJSON data
-map.on('load', function() {
+map.on('load', function () {
     // Use PapaParse to fetch and parse the CSV data from a Google Forms spreadsheet URL
     Papa.parse(dataUrl, {
         download: true, // Tells PapaParse to fetch the CSV data from the URL
         header: true, // Assumes the first row of your CSV are column headers
-        complete: function(results) {
+        complete: function (results) {
             // Process the parsed data
             processData(results.data); // Use a new function to handle CSV data
         }
     });
 });
 
-function processData(results){
+function processData(results) {
     console.log(results) //for debugging: this can help us see if the results are what we want
     results.forEach(feature => {
         console.log(feature) // for debugging: are we seeing each feature correctly?
@@ -101,7 +102,7 @@ function processData(results){
         let longitude = feature['lng'];
         let latitude = feature['lat'];
         let commuterStatus = feature['Do you currently identify as a UCLA commuter student?'];
-        let zipCode = feature['What is the zipcode of the area you commute from?']; 
+        let zipCode = feature['What is the zipcode of the area you commute from?'];
         let mealPrepStatus = feature['Do you meal prep ahead of time to prepare for a day on campus?'];
         let mealPrepReason = feature['Expand on your answer above'];
         let fridgeAccess = feature['Do you feel you have enough access to fridges for storing meals on campus?'];
@@ -111,5 +112,3 @@ function processData(results){
         addMarker(feature);
     });
 };
-
-

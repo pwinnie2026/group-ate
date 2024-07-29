@@ -82,66 +82,6 @@ header {
     /* Centers the footer content */
 }
 
-/* Modal */
-.modal {
-    position: fixed;
-    display: block;
-    z-index: 999999999999;
-    /*What allows the modal to sit behind*/
-    padding-top: 150px;
-    padding-left: 100px;
-    padding-right: 100px;
-    left: 10;
-    width: 95%;
-    height: 100%;
-}
-
-.modal-content {
-    border: 2px solid rgb(212, 146, 84);
-}
-
-.header-container {
-    background-color: rgb(232, 178, 128);
-    border-bottom: 2px solid rgb(212, 146, 84);
-    height: 130px;
-}
-
-#header-x {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 30px;
-}
-
-#modal-header {
-    padding-top: 5px;
-    width: 90%;
-}
-
-.main-container {
-    background-color: rgb(240, 234, 226);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    height: 150px;
-    overflow-y: scroll;
-    border-bottom: 2px solid rgb(212, 146, 84);
-}
-
-#modal-objectives {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 5px;
-}
-
-.footer-container {
-    background-color: rgb(238, 210, 174);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-}
-
 /* Header, P, Button Tags */
 
 p {
@@ -153,22 +93,6 @@ h2 {
     font-weight: 600;
     color: rgb(0, 69, 72);
     padding-bottom: 5px;
-}
-
-h3 {
-    font-size: 30px;
-    font-weight: 800;
-    color: rgb(0, 69, 72);
-    padding-bottom: 5px;
-}
-
-button {
-    font-weight: 600;
-    font-size: 20px;
-    cursor: grab;
-    padding: 5px;
-    border: solid 3px rgb(209, 101, 0);
-    border-radius: 5px;
 }
 
 /* Logo | Navigation Bar */
@@ -316,30 +240,25 @@ nav .icon-burger .line {
     }
 }
 
-/* About Page */
-#memo {
-    /* background-color: rgb(48, 155, 157, 0.25); */
-    background-color: rgba(235, 255, 255, 0.25);
-    /*Brighter Option of Above*/
-    box-shadow: 0 4px 8px 0 rgba(235, 255, 255, 0.25), 0px 0px 30px 10px rgba(235, 255, 255, 0.25);
-    margin-left: 30px;
-    height: 540px;
-    overflow-y: scroll;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
+/*GALLERY*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
-.memo-description {
-    padding-left: 30px;
+.gallery img {
+    margin: 10px;
+    cursor: pointer;
+    max-width: 300px;
+    object-fit: cover;
+    height: auto;
+    border-radius: 10px;
 }
 
-.memo-header {
-    color: rgb(155, 67, 0);
-}
-
-.memo-description a {
-    color: rgb(155, 67, 0);
-    text-decoration: none;
+.img-container p {
+    border: 2px red solid;
+    display: flex;
+    justify-content: center;
 }
