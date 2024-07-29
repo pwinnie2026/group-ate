@@ -314,3 +314,11 @@ nav .icon-burger .line {
         opacity: 0;
     }
 }
+
+/* About Page */
+#memo {
+    background-color: #309b9d;
+    margin-left: 30px;
+    height: 600px;
+    overflow-y: scroll;
+}

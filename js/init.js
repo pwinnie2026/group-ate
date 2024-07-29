@@ -22,12 +22,15 @@ function addMarker(data) {
     let commuterStatus = data['Do you currently identify as a UCLA commuter student?'];
     let mealPrepStatus = data['Do you meal prep ahead of time to prepare for a day on-campus?'];
     let mealPrepReason = data['Expand on your answer above?'];
-    let fridgeAccess = data[''];
-    let microwaveAccess = data[''];
-    let experience = data[''];
+    let fridgeAccess = data['Do you feel you have enough access to fridges for storing meals on-campus?'];
+    let microwaveAccess = data['Do you feel you have enough access to microwaves for reheating meals on-campus?'];
+    let experience = data['Expand on your experiences using refrigeration (storage) and microwave (reheating) on campus? '];
 
     let popup_message; 
-    if ( == "Yes") {
+    if (commuterStatus == "Yes") {
+        popup_message = ``
+
+    } else if (commuterStatus = "No") {
 
     }
 }
