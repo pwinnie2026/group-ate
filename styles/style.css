@@ -1,6 +1,6 @@
 /* Global reset to ensure consistency across browsers */
 * {
-    font-family: Arial, sans-serif;
+    font-family: "Noto Sans", sans-serif;
     /* Sets a default font for the whole page */
     margin: 0;
     /* Removes default margins */
@@ -13,7 +13,6 @@
 /* Sets the background color of the whole page and ensures content fits the screen height */
 html {
     background-color: rgb(212, 227, 205);
-    border: purple 2px solid;
 }
 
 /* Applies to both <html> and <body> */
@@ -40,7 +39,6 @@ body {
     /* Bottom area for the footer */
     grid-template-rows: auto 1fr auto;
     /* Sizes: auto for header and footer to fit content, 1fr for main to fill remaining space */
-    border: orange 2px solid;
 }
 
 /* Grid area assignments for each major section, linking them to their respective areas in the grid */
@@ -52,11 +50,108 @@ header {
     font-size: 40px;
     font-weight: 800;
     color: rgb(24, 96, 15);
-    border: red 2px solid;
+}
+
+#map {
+    z-index: 99999;
+    grid-area: main;
+    /* Assigns the map section to its grid area */
+    height: 80vh;
+    /* Sets the map's height to 80% of the viewport height */
+    margin-left: 30px;
+    border: solid 5px #b3855d;
+    border-radius: 30px;
+}
+
+#footer {
+    grid-area: footer;
+    padding-top: 5px;
+    /* Adds padding for better spacing */
+    margin-top: 30px;
+    background-color: #b3855d;
+    /* Sets a dark background for contrast */
+    color: #fff;
+    /* Ensures text is readable against the dark background */
+    text-align: center;
+    /* Centers the footer content */
+}
+
+/* Modal */
+.modal {
+    border: 2px solid red;
+    position: fixed; 
+    display: block;
+    z-index: 999999999999; /*What allows the modal to sit behind*/
+    padding-top: 225px;
+    padding-left: 100px;
+    padding-right: 100px;
+    left: 10;
+    width: 95%; 
+    height: 100%;
+}
+
+.modal-content {
+    border: 2px solid red;
+}
+
+.header-container {
+    border: 2px solid red;
+    background-color: lightsalmon;
+    height: 130px;
+}
+
+#header-x {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+
+#modal-header{
+    padding-top: 5px;
+    width: 90%;
+}
+
+.main-container {
+    border: 2px solid red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 150px;
+    overflow-y: scroll;
+}
+
+#modal-objectives {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.footer-container {
+    border: 2px solid red;
+    background-color: lavender;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+/* Header, P, Button Tags */
+
+p {
+    font-size: 15px;
+    color: rgb(44, 90, 11);
 }
 
 h2 {
     font-weight: 600;
+    color: rgb(44, 90, 11);
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 800;
     color: rgb(44, 90, 11);
     padding-bottom: 5px;
 }
@@ -71,35 +166,13 @@ button {
     border-radius: 5px;
 }
 
-#map {
-    grid-area: main;
-    /* Assigns the map section to its grid area */
-    height: 80vh;
-    /* Sets the map's height to 80% of the viewport height */
-    margin-left: 30px;
-    border: solid 5px #b3855d;
-    border-radius: 30px;
-}
-
-#footer {
-    grid-area: footer;
-    border: greenyellow 2px solid;
-    padding-top: 5px;
-    /* Adds padding for better spacing */
-    margin-top: 30px;
-    background-color: #b3855d;
-    /* Sets a dark background for contrast */
-    color: #fff;
-    /* Ensures text is readable against the dark background */
-    text-align: center;
-    /* Centers the footer content */
-}
-
+/* Logo | Navigation Bar */
 .logo {
     height: 30px;
     object-fit: cover;
 }
 
+/* Navigation Bar Code */
 nav {
     position: fixed;
     z-index: 10;
@@ -111,7 +184,6 @@ nav {
     /* Background/Border of Nav Bar */
     background-color: #b3855d;
     border-bottom: 3px solid rgb(24, 96, 15);
-    border: blue 2px solid;
 
 }
 

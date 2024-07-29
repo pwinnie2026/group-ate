@@ -3,41 +3,46 @@
 
 <head>
     <title>Group-ATE: Food Prep Storage</title>
-    
+
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="#">
 
-    <!-- Style.CSS Linkage -->
+    <!--Style.CSS Linkage-->
     <link rel="stylesheet" href="styles/style.css">
 
-    <!-- Website Icon -->
+    <!--Website Icon-->
     <link rel="icon" href="photo/smiskiicon.png">
 
-    <!-- MapLibreGL's CSS-->
+    <!--MapLibreGL's CSS-->
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
 
-    <!-- MapLibreGL's JavaScript-->
+    <!--MapLibreGL's JavaScript-->
     <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+
+    <!--Google Font: Noto-->
+    <!--About Noto: https://fonts.google.com/noto?query=noto+sans-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
 
 <body>
     <header>
         <br>
-        we're at ucla!
-        <!-- hint: you can make a menu with other links here if you'd like -->
+        paige is currently working on it :((
         <nav class="css-selector">
-            <!-- Navigation Bar w/ Jumplinks -->
+            <!--Navigation Bar w/ Jumplinks-->
             <input id="nav-toggle" type="checkbox">
             <div class="logo">
                 <img class="logo" src="photo/smiskilogo.png">
             </div>
-            <!-- Jumplinks -->
+            <!--Jumplinks -->
             <ul class="links">
                 <li><a href="./index.html">visit the map</a></li>
                 <li><a href="./about.html">about the project</a></li>
                 <li><a href="./survey.html">share your story</a></li>
             </ul>
-            <!--Icon Burger-->
+            <!--Icon Burger | Collapsable Nav-Bar-->
             <label for="nav-toggle" class="icon-burger">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -46,12 +51,47 @@
         </nav>
     </header>
 
+    <!--Modal-->
+    <div id="modal-id" class="modal">
+        <div class="modal-content">
+            <header class="header-container">
+                <div id="header-x">
+                    <h3 id="modal-header">Observations Regarding the Food Prep Storage of UCLA Commuter Students</h3>    
+                    <!--This code is adds the "X" to the modal-->
+                    <span onclick="document.getElementById('modal-id').style.display='none'">&times;</span>
+                </div>
+                <p id="modal-subheader"><em>Nellie Nguyen, Kiana Tran, Paige Wu:</em></p>
+            </header>
+            <div class="main-container">
+                <p id="modal-objectives"><strong>Objectives for this "Mapplication"</strong></p>
+                <p id="modal-description">
+                    We seek to empower student voices to share their concerns through 
+                    conducting a community outreach survey of UCLA commuter students to 
+                    gain perspective on how their experiences as commuters impacts the way 
+                    they meal prep.
+                    <br><br>
+                    Through this platform, we hope to provide a space to share their 
+                    specific experiences, giving all students access to comments and concerns 
+                    by others in similar circumstances which are not otherwise represented 
+                    by UCLA’s main platforms.
+                </p>
+            </div>
+            <footer class="footer-container">
+                <p>You have two options to <strong>close this modal</strong>:</p>
+                <p>Click on the <strong>"x"</strong> or <strong>click anywhere</strong> outside of the modal.</p>
+            </footer>
+        </div>
+    </div>
+
     <main>
+        <!--Map-->
         <div id="map"></div>
     </main>
+
     <div id="footer">
         Copyright(2024)
     </div>
+    <!--Init.JS Linkage-->
     <script src="js/init.js"></script>
 </body>
 
