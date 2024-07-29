@@ -265,7 +265,7 @@ nav .icon-burger .line {
 }
 
 /*To make it media responsive; only appears when the screen size is small*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1004px) {
     nav .logo {
         float: none;
         width: auto;
