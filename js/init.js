@@ -15,6 +15,16 @@ window.onclick = function (event) {
 
 // MODAL ^^^
 
+// declare variables
+let mapOptions = {'centerLngLat': [-118.444,34.0709],'startingZoomLevel':8}
+
+const map = new maplibregl.Map({
+    container: 'map', // container ID
+    style: 'https://api.maptiler.com/maps/bright/style.json?key=JWrMVIrr3Jz2WGVMeDwh', // Your style URL
+    center: mapOptions.centerLngLat, // Starting position [lng, lat]
+    zoom: mapOptions.startingZoomLevel // Starting zoom level
+});
+
 // Adding markers to map from Google Form
 function addMarker(data) {
 
@@ -67,14 +77,18 @@ function addMarker(data) {
     }
 }
 
+const dataUrl = ""
 
-// declare variables
-let mapOptions = {'centerLngLat': [-118.444,34.0709],'startingZoomLevel':8}
-
-const map = new maplibregl.Map({
-    container: 'map', // container ID
-    style: 'https://api.maptiler.com/maps/bright/style.json?key=JWrMVIrr3Jz2WGVMeDwh', // Your style URL
-    center: mapOptions.centerLngLat, // Starting position [lng, lat]
-    zoom: mapOptions.startingZoomLevel // Starting zoom level
+// When the map is fully loaded, start adding GeoJSON data
+map.on('load', function() {
+    // Use PapaParse to fetch and parse the CSV data from a Google Forms spreadsheet URL
+    Papa.parse(dataUrl, {
+        download: true, // Tells PapaParse to fetch the CSV data from the URL
+        header: true, // Assumes the first row of your CSV are column headers
+        complete: function(results) {
+            // Process the parsed data
+            processData(results.data); // Use a new function to handle CSV data
+        }
+    });
 });
 
