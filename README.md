@@ -30,7 +30,7 @@ We use a Google Form survey to collect user stories from UCLA commuter students,
 The map was created using MapLibre, and with GeoJSON, we could visualize each response with markers. Using papa parse, we could link the survey responses to our map, allowing users and visitors to see where their responses were displayed geographically and instantly. As our data pertains to UCLA's commuter students, all users will have their marker correspond to the zip code from which they commute. Additionally, depending on their feelings toward access to appliances such as fridges (food storage) and microwaves (reheating), they will be identified in one of the three categories: satisfied, somewhat, and unsatisfied.
 
 
-## How it can be repurposed:
+## How it can be repurposed
 The information on the mapplication will be accessible to current and future students, empowering them to navigate and demand better food storage spaces on campus. Incoming commuter students can use it to learn from other students' experiences and adapt their meal prepping to best suit their commute. 
 
 As more data is collected, it will serve as a tool to assess and track whether or not progress has been made and if commuter students continue to struggle with meal preparation due to a lack of access to food storage and reheating appliances. The data from our mapplication will be sent to community organizations, including cityLAB, the organization responsible for creating BruinHub, and the Commuter Support and Programs office staff. If issues persist, we will work alongside the student body representatives in the organizations to advocate for structural change and increase funding for more accessible meal-prep resources and equitable food storage solutions.
