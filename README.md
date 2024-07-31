@@ -9,7 +9,6 @@
 * [Technologies Used](#technologies-used)
 * [How it can be repurposed](How-it-can-be-repurposed)
 * [Features](#features)
-* [Screenshots](#screenshots)
 * [Acknowledgements](#acknowledgements)
 * [Contact Information](#Contact-Information)
 
@@ -26,32 +25,34 @@ We will empower student voices by centering the focus on student voices and shar
 
 
 ## Technologies Used
-We use a Google Form survey to collect user stories from UCLA commuter students, which will be displayed on our mapplication. The website is written using HTML, CSS, and Javascript to create an interactive platform which allows the user to choose what type of responses they would like to hear from. After selecting the categorical button, the user would then have to select a marker on the map to initiate the narrative window popup where they will be able to read the individuals' written responses.
+We use a Google Form survey to collect user stories from UCLA commuter students, which will be displayed on our mapplication. The website uses HTML, CSS, and Javascript to create an interactive platform allowing users to choose what type of responses they would like to hear from. After selecting the categorical button, the user would then have to select a marker on the map to initiate the narrative window popup where they will be able to read the individuals' written responses.
 
-The map was created using MapLibre and with GeoJSON, we were able to visualize each response with markers. Using papa parse, we were able to link the survey responses to our map, allowing users and visitors to see where their responses display geographically and instantly. As our data pertains to UCLA's commuter students, all users will have their marker correspond to the zip code from which they commute from. Additionally, depending on their feelings toward their access to appliances such as fridges (food storage) and microwaves (reheating) they will be identified with one of the three categories: satisfied, somewhat, and unsatisfied.
+The map was created using MapLibre, and with GeoJSON, we could visualize each response with markers. Using papa parse, we could link the survey responses to our map, allowing users and visitors to see where their responses were displayed geographically and instantly. As our data pertains to UCLA's commuter students, all users will have their marker correspond to the zip code from which they commute. Additionally, depending on their feelings toward access to appliances such as fridges (food storage) and microwaves (reheating), they will be identified in one of the three categories: satisfied, somewhat, and unsatisfied.
 
 
 ## How it can be repurposed (how can others use your code):
-The information on the mapplication will be accessible to current and future students, empowering them to navigate and demand better food storage spaces on campus. The data would be used as an assessment to track whether commuter students continue to face struggles with meal preparation from lack of access to food storage and reheating appliances.
+The information on the mapplication will be accessible to current and future students, empowering them to navigate and demand better food storage spaces on campus. Incoming commuter students can use it to learn from other students' experiences and adapt their meal prepping to best suit their commute. 
 
-The data from our mapplication will be sent to community organizations including cityLAB, the organization that is responsible for the creation of BruinHub, and the Commuter Support and Programs office staff. If issues were to persist, we would work along-side the student body representatives in the organizations to advocate for structural change and increase funding for more accessible meal-prep resources and equitable food storage solutions.
+As more data is collected, it would be a good tool to access and track whether commuter students continue to face struggles with meal preparation due to a lack of access to food storage and reheating appliances. The data from our mapplication will be sent to community organizations, including cityLAB, the organization responsible for creating BruinHub, and the Commuter Support and Programs office staff. If issues persist, we will work alongside the student body representatives in the organizations to advocate for structural change and increase funding for more accessible meal-prep resources and equitable food storage solutions.
 
-Overall, our project can provide an outlet for the community to share on-campus issues related to meal-prepping food accessibility faced by students who must plan and bring their meals from home.
+Overall, our project can provide an outlet for the community to share on-campus issues related to meal-prepping food accessibility faced by students who must plan and bring their meals from home. We hope that our website can continue to empower UCLA commuter students for years to come through continuous story-collecting as the campus grows and develops. We would greatly appreciate it if students could revisit our website to give updates on the status of food storage and appliance accessibility. Additionally, we hope that as time progresses and our user count increases, we can update and improve our mapplication to showcase user stories better and increase user satisfaction.
+
+Our project was created to share our knowledge freely, so anyone can access the code and utilize all parts to help others build their own projects. We hope that anyone interested in our code will continue to hold the same ethics of design justice and have their projects remain open source as to keep knowledge accessible to all!
 
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+Our mapplication features color-coded markers that are divided into three categories of responses of whether students feel satisfied, somewhat satisfied, or unsatisfied with the access of fridges and microwaves on campus. 
+![Example screenshot](./img/screenshot.png)
 
+After selecting a category of satisfaction, the button filters through the responses and displays only the map markers that coordinate with that category. For example, a user can select "unsatisfied," only responses that feel dissatisfied with the access to fridges and microwaves will appear on the map. To further advance through the stories, the user will then select a specific marker on the map to open up a popup, coming from the right, that shares the responses from the survey that expand on the student's experiences with meal-prepping appliances on campus.
+![Example screenshot](./img/screenshot.png)
 
-## Screenshots
+We encourage visitors to take the survey directly on the website by clicking the "share your story" tab. After submitting a response, a user will see their story appear on our map within 30 seconds.
 ![Example screenshot](./img/screenshot.png)
 
 
 ## Acknowledgements
-We couldn't have created this project without the support of many people. Thank you to Professor Albert Kochaphum for guiding us through every process and being a fantastic professor! Thank you to the AAS 191A Summer 2024 Session A class for participating in our project through the survey and words of encouragement!
+We couldn't have created this project without the support of many people. An overwhelming thank you to Professor Albert Kochaphum for guiding us through every process, working tirelessly with us to get our website running, and being a fantastic professor overall! Thank you to the AAS 191A Summer 2024 Session A class for participating in our project through the survey and words of encouragement!
 
 
 ## Contact Information
