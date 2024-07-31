@@ -1,4 +1,4 @@
-# Food is Fuel | Narrating the Accessibility of Food Storage and Reheating Appliances from UCLA Commuter Students
+# Food is Fuel | UCLA Bruin Commuters Hungry For Change
 > A web-based mapplication dedicated to sharing and learning about the experiences of UCLA commuter students who meal prep.
 > Access it [here](https://pwinnie2026.github.io/group-ate/index.html).
 
