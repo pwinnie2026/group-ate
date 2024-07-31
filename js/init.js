@@ -16,6 +16,7 @@ window.onclick = function (event) {
 }
 
 // MAP
+
 // declare variables
 let mapOptions = { 'centerLngLat': [-118.444, 34.0709], 'startingZoomLevel': 8 }
 
@@ -90,7 +91,6 @@ function addMarker(data) {
             console.log("added map markers");
     }
 }
-
 
 // Create custom markers
 function createMarkerElement(img) {
