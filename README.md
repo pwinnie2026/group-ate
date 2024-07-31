@@ -48,7 +48,7 @@ Our mapplication features color-coded markers that are divided into three catego
 After selecting a category of satisfaction, the button filters through the responses and displays only the map markers that coordinate with that category. For example, a user can select "unsatisfied," only responses that feel dissatisfied with the access to fridges and microwaves will appear on the map. To further advance through the stories, the user will then select a specific marker on the map to open up a popup, coming from the right, that shares the responses from the survey that expand on the student's experiences with meal-prepping appliances on campus.
 
 ### Student Narratives ###
-![Example screenshot](photo/narrativeSS.png)
+![Example screenshot](photo/new-narrativeSS.png)
 
 We encourage visitors to take the survey directly on the website by clicking the "share your story" tab. After submitting a response, a user will see their story appear on our map within 30 seconds.
 
