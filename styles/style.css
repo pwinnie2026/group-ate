@@ -65,7 +65,6 @@ header {
     height: 100vh;
 }
 
-
 #map {
     /* z-index: 99999; */
     grid-area: maparea;
