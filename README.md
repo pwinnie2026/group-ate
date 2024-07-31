@@ -22,7 +22,7 @@ We will survey UCLA commuter students to determine whether they meal prep and as
 In our mapplication, we will categorize responses by those who are satisfied, somewhat, or unsatisfied with their access to appliances such as fridges and microwaves to gain insight on meal-prepping commuter students. We hope to visualize spatial relationships and patterns, revealing shared experiences of potential inequities regarding the distribution of meal-prep resources across campus. 
 
 ## Who is being empowered?
-We seek to empower student voices to share their concerns through conducting a community outreach survey of UCLA commuter students to gain perspective on how their experiences as commuters impact the way they meal prep. By providing meal-prepping commuters with a platform to comment and share concerns of food storage and reheating appliance, students will have a collective voice that can highlight shared issues that are otherwise neglected by UCLA’s leading platforms.
+We will empower student voices by centering the focus on student voices and sharing their concerns, which will be conducted by a community outreach survey of UCLA commuter students to gain perspective on how their experiences as commuters impact how they meal prep. By providing meal-prepping commuters with a platform to comment and share concerns about food storage and reheating appliances, students will have a collective voice that can highlight shared issues that are otherwise neglected by UCLA’s leading platforms.
 
 
 ## Technologies Used
