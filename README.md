@@ -1,5 +1,5 @@
-# Food is Fuel | Navigating Meal Prep and Storage Struggles: Stories from UCLA Commuter Students
-> A web-based mapplication dedicated to sharing and learning about the experiences of UCLA commuter students who meal prep. Additionally, we hope to share resources to help current and future students navigate the potential struggles of meal planning!
+# Food is Fuel | Narrating the Accessibility of Food Storage and Reheating Appliances from UCLA Commuter Students
+> A web-based mapplication dedicated to sharing and learning about the experiences of UCLA commuter students who meal prep.
 > Access it [here](https://pwinnie2026.github.io/group-ate/index.html).
 
 
@@ -15,24 +15,28 @@
 
 
 ## Objective
-Commuter students are denied the option to purchase a meal plan at UCLA, thus causing them to struggle to arrange their own meals while attending classes on campus. Observing UCLA’s limited number of communal refrigeration (storage) and microwave (reheating) appliances, many commuter students cannot independently navigate and prepare their meals. With 43% of UCLA’s off-campus population commuting more than an hour each way, commuter students may stay on-campus late to beat evening traffic (Lopez, LA Times). UCLA’s BruinHub, opened in 2021, provides only one fridge and microwave, and while it serves as a great start to providing resources for commuters, it is difficult to accommodate almost 30,000 undergraduate and graduate commuters (Hallisey, UCLA transportation). Housed in the Wooden Center, students’ meal prep resources are “out of the way of classes” (Rajha, BruinLife). Through our mapplication, we hope to provide a platform for UCLA commuter students to have their voices heard, amplifying their experiences with meal prepping.
+Commuter students are denied the option to purchase a meal plan at UCLA, leaving them responsible for arranging their meals while attending classes on campus. Additionally, with 43% of UCLA's off-campus population commuting more than an hour each way, commuter students may stay on campus late to beat evening traffic (Lopez, LA Times). We will survey UCLA commuter students on their experiences with food storage and reheating accessibility on campus. UCLA’s BruinHub, opened in 2021, provides only one fridge and microwave, and while it serves as a great start to providing resources for commuters, it is difficult to accommodate almost 30,000 undergraduate and graduate commuters (Hallisey, UCLA transportation). Housed in the Wooden Center, students’ meal prep resources are “out of the way of classes” (Rajha, BruinLife). 
+
+We will survey UCLA commuter students to determine whether they meal prep and ask them about their experiences regarding food storage and reheating accessibility on campus. The survey aims to learn and understand UCLA commuter students’ meal-prepping struggles, specifically their experiences with food storage and reheating. 
+
+In our mapplication, we will categorize responses by those who are satisfied, somewhat, or unsatisfied with their access to appliances such as fridges and microwaves to gain insight on meal-prepping commuter students. We hope to visualize spatial relationships and patterns, revealing shared experiences of potential inequities regarding the distribution of meal-prep resources across campus. 
 
 ## Who is being empowered?
-We seek to empower student voices to share their concerns through conducting a community outreach survey of UCLA commuter students to gain perspective on how their experiences as commuters impacts the way they meal prep. The survey aims to learn and understand about UCLA commuter students’ meal prepping struggles, specifically their experiences with food storage and reheating. The mapplication will visualize spatial relationships and patterns, revealing shared experiences of potential inequities regarding the distribution of meal-prep resources across campus. 
-
-By providing meal-prepping commuters with a platform to comment and share concerns of food storage and reheating appliance, students will have a collective voice that can highlight shared issues that are otherwise neglected by UCLA’s main platforms.
+We seek to empower student voices to share their concerns through conducting a community outreach survey of UCLA commuter students to gain perspective on how their experiences as commuters impact the way they meal prep. By providing meal-prepping commuters with a platform to comment and share concerns of food storage and reheating appliance, students will have a collective voice that can highlight shared issues that are otherwise neglected by UCLA’s leading platforms.
 
 
 ## Technologies Used
-- Developed Using: HTML/CSS, Javascript, MapLibre GL JS, GeoJSON 
-- Data Collecting and Implementation: Google Forms, Google Spreadsheets, Google Apps Script, PapaParse
-- Site Hosting: GitHub Pages
+We use a Google Form survey to collect user stories from UCLA commuter students, which will be displayed on our mapplication. The website is written using HTML, CSS, and Javascript to create an interactive platform which allows the user to choose what type of responses they would like to hear from. After selecting the categorical button, the user would then have to select a marker on the map to initiate the narrative window popup where they will be able to read the individuals' written responses.
+
+The map was created using MapLibre and with GeoJSON, we were able to visualize each response with markers. Using papa parse, we were able to link the survey responses to our map, allowing users and visitors to see where their responses display geographically and instantly. As our data pertains to UCLA's commuter students, all users will have their marker correspond to the zip code from which they commute from. Additionally, depending on their feelings toward their access to appliances such as fridges (food storage) and microwaves (reheating) they will be identified with one of the three categories: satisfied, somewhat, and unsatisfied.
 
 
 ## How it can be repurposed:
-We hope the data from our mapplication will be used by community organizations like cityLAB, the organization that initiated the creation of BruinHub, and other commuter support groups to identify and address the struggles commuters who meal prep face due to the lack of convenient and accessible locations for food storage and reheating, but it can highlight the systemic gaps and inequalities in resource allocation. CityLAB  and other organizations can use the information to advocate for structural changes such as pressuring university administration to prioritize funding for more accessible meal-prep resources and equitable food storage solutions. 
+The information on the mapplication will be accessible to current and future students, empowering them to navigate and demand better food storage spaces on campus. The data would be used as an assessment to track whether commuter students continue to face struggles with meal preparation from lack of access to food storage and reheating appliances.
 
-The information on the mapplication would also be accessible to current and future students, empowering them to navigate and demand better food storage spaces on campus. Overall, we hope the project can provide an outlet for the community to share on-campus issues related to meal-prepping food accessibility faced by students who must plan and bring their meals from home.
+The data from our mapplication will be sent to community organizations including cityLAB, the organization that is responsible for the creation of BruinHub, and the Commuter Support and Programs office staff. If issues were to persist, we would work along-side the student body representatives in the organizations to advocate for structural change and increase funding for more accessible meal-prep resources and equitable food storage solutions.
+
+Overall, our project can provide an outlet for the community to share on-campus issues related to meal-prepping food accessibility faced by students who must plan and bring their meals from home.
 
 
 ## Features
@@ -44,7 +48,6 @@ List the ready features here:
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
 
 
 ## Acknowledgements
