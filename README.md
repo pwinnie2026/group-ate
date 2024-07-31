@@ -43,15 +43,15 @@ Our project was created to share our knowledge freely, so anyone can access the 
 ## Features
 Our mapplication features color-coded markers that are divided into three categories of responses of whether students feel satisfied, somewhat satisfied, or unsatisfied with the access of fridges and microwaves on campus. 
 ### Default View ###
-![Example screenshot](./img/homedefaultSS.png)
+![Example screenshot](photo/homedefaultSS.png)
 
 After selecting a category of satisfaction, the button filters through the responses and displays only the map markers that coordinate with that category. For example, a user can select "unsatisfied," only responses that feel dissatisfied with the access to fridges and microwaves will appear on the map. To further advance through the stories, the user will then select a specific marker on the map to open up a popup, coming from the right, that shares the responses from the survey that expand on the student's experiences with meal-prepping appliances on campus.
 ### Student Narratives ###
-![Example screenshot](./img/narrativeSS.png)
+![Example screenshot](photo/narrativeSS.png)
 
 We encourage visitors to take the survey directly on the website by clicking the "share your story" tab. After submitting a response, a user will see their story appear on our map within 30 seconds.
 ### Survey Tab ###
-![Example screenshot](./img/surveySS.png)
+![Example screenshot](photo//surveySS.png)
 
 
 ## Acknowledgements
