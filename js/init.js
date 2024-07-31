@@ -82,14 +82,33 @@ function addMarker(data) {
         }
 
 
-    new maplibregl.Marker({
+    let marker = new maplibregl.Marker({
          element: createMarkerElement(img)
     })
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
         .addTo(map)
-    }
+    // Add event listeners to the popup
+    marker.getPopup().on('open', () => {
+        let experiencesContainer = document.getElementById('experiences-container');
+        experiencesContainer.innerHTML = experience;
+        experiencesContainer.style.display = 'block';
+        experiencesContainer.classList.add('slide-in');
+        experiencesContainer.classList.remove('slide-out');
+    });
+
+    marker.getPopup().on('close', () => {
+        let experiencesContainer = document.getElementById('experiences-container');
+        experiencesContainer.classList.add('slide-out');
+        experiencesContainer.classList.remove('slide-in');
+        setTimeout(() => {
+            experiencesContainer.style.display = 'none';
+        }, 300); // Assuming the slide-out animation duration is 300ms
+    });
+  }
+
+
 }
 
 // Create custom markers
@@ -218,13 +237,35 @@ function summarizeCategorizedData(){
 
 }
 
+// Function to filter data based on cateogry selection 
+function filterData(event, category){
+    let filteredData = allData.filter(feature=>feature.satificationCategory == category);
+    console.log(filteredData);
+    // map.getSource('markers').setData(filteredData);
+    toggleMarkersVisibility(category, true);
+    console.log('hi you clicked the '+category+' buttton')
+}
+
+function toggleMarkersVisibility(category, isVisible) {
+    const markers = document.querySelectorAll(`.marker-${category}`);
+    markers.forEach(marker => {
+        marker.style.display = isVisible ? '' : 'none';
+    });
+}
+
+
 function addToHtmlCategoryData(){
+    let satisfiedTab = document.getElementById("tab-satisfied");
+    satisfiedTab.innerHTML = "Satisfied: " + categorizedData[0].count;
+    let somewhatTab = document.getElementById("tab-somewhat");
+    somewhatTab.innerHTML = "Somewhat: " + categorizedData[1].count;
+    let unsatisfiedTab = document.getElementById("tab-unsatisfied");
+    unsatisfiedTab.innerHTML = "Unsatisfied: " + categorizedData[2].count;
     let targetDiv = document.getElementById("categorystuff");
     let htmlString = "";
-    categorizedData.forEach(category=>{
-        htmlString += `<div class="categorytab" id="${category.category}">${category.category}: ${category.count}</div>`;
-    })
-    targetDiv.innerHTML = htmlString;
-
+    // categorizedData.forEach(category=>{
+    //     let thisTab = document.getElementById(`tab-${category.category}`);
+    //     thisTab.innerHTML = `${category.category}: ${category.count}`;
+    // })
     
 }

@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="#">
 
     <!--Style.CSS Linkage-->
+    <link rel="stylesheet" href="styles/experiences-container.css">
+    <link rel="stylesheet" href="styles/verticaltabs.css">
     <link rel="stylesheet" href="styles/style.css">
 
     <!--Website Icon-->
@@ -30,7 +32,8 @@
 <body>
     <header>
         <br>
-        <h2 id="project-title">Narrating the Accessibility of Food Storage and Reheating Appliances from UCLA Commuter Students</h2> 
+        <h2 id="project-title">UCLA Bruin Commuters Hungry For Change</h2>  
+        <!--Albert won't let us use this title </3 (jk he wants us to be creative elsewhere)-->
         <nav class="css-selector">
             <!--Navigation Bar w/ Jumplinks-->
             <input id="nav-toggle" type="checkbox">
@@ -57,11 +60,11 @@
         <div class="modal-content">
             <header class="header-container">
                 <div id="header-x">
-                    <h3 id="modal-header">Narrating the Accessibility of Food Storage and Reheating Appliances from UCLA Commuter Students</h3>    
+                    <h3 id="modal-header">Food for Thought</h3>    
                     <!--This code is adds the "X" to the modal-->
                     <span onclick="document.getElementById('modal-id').style.display='none'">&times;</span>
                 </div>
-                <p id="modal-subheader"><em>Nellie Nguyen, Kiana Tran, Paige Wu:</em></p>
+                <!--<p id="modal-subheader"><em>Nellie Nguyen, Kiana Tran, Paige Wu:</em></p> our names not necessary -->
             </header>
             <div class="main-container">
                 <p id="modal-objectives"><strong>Thank you for visiting our "Mapplication"!</strong></p>
@@ -85,8 +88,17 @@
     </div>
 
     <main>
+        <!-- Left overview bar-->
+        <div id="overview">    
+            <div class="tab">
+                <button class="tablinks" onclick="filterData(event,'satified')" id="tab-satisfied">satisfied</button>
+                <button class="tablinks" onclick="filterData(event, 'unsatisfied')" id="tab-unsatisfied">unsatisfied</button>
+                <button class="tablinks" onclick="filterData(event, 'somewhat')" id="tab-somewhat">somewhat</button>
+            </div>
+        </div>
+
         <!--Map-->
-        <div id ="map-experience-container"></div>
+        <div id ="map-experiences-container">
             <div id="map"></div>
 
             <!--Displaying experiences with food facilities -->
@@ -100,6 +112,7 @@
 
                 </div>
             </div>
+        </div>
     </main>
 
     <div id="footer">

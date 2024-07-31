@@ -1,0 +1,63 @@
+#experiences-container {
+	transition: transform 0.3s ease-in-out;
+}
+.slide-in {
+	transform: translateX(0);
+}
+.slide-out {
+	transform: translateX(-100%);
+}
+
+
+
+
+/* Student Responses Experience column */
+
+#experiences-container {
+    grid-area: experiencesContainer;
+    width: 300px; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    overflow-y: auto;
+    z-index: 10; /* Ensure it is above the map */
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Initially hidden */
+    display: none; /* Initially hidden */
+}
+
+#experiences-container.show {
+    display: block; /* Show when the class 'show' is added */
+    transform: translateX(0); /* Slide in */
+}
+
+.experience {
+    background-color: #fff; /* White background for each response */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners for responses */
+    padding: 15px; /* Space inside each response block */
+    margin-bottom: 15px; /* Space between responses */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow */
+	z-index: 99999;
+}
+
+/* Styling for text within a response */
+.experience p {
+    margin: 0 0 10px; 
+    line-height: 1.5; 
+    color: #333; 
+}
+
+.experience p strong {
+    color: #444; 
+    font-weight: bold; 
+}
+
+
+
+.experience {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
