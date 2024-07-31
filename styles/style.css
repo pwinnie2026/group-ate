@@ -58,6 +58,13 @@ header {
     color: rgb(0, 69, 72);
 }
 
+#map-experience-container {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+}
+
 #map {
     z-index: 99999;
     grid-area: main;
@@ -67,6 +74,33 @@ header {
     margin-left: 30px;
     border: solid 2px rgb(212, 146, 84);
     border-radius: 30px;
+}
+
+#experiences-container {
+    /* display: grid; */
+    grid-area: experiencesContainer;
+    /* position: absolute;  */
+    /* top: 0; */
+    /* right: 0; */
+    /* width: 45%; */
+    /* height: 100%; */
+    background-color: rgba(249, 249, 249, 0.9); /* Semi-transparent background */
+    border-left: 2px solid #ddd;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000000;  /* ITS OVER 9000! */
+    /* Ensures it appears above the map */
+    overflow-y: auto; /* Adds scroll if content exceeds height */
+    border-radius: 0 5px 5px 0; /* Rounded corners for aesthetic */
+}
+
+.experience {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 #footer {
@@ -313,6 +347,39 @@ nav .icon-burger .line {
     nav :checked~.icon-burger .line:nth-child(2) {
         opacity: 0;
     }
+}
+
+/* Student Responses Experience column */
+
+#experiences-container {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 5px; /* Rounded corners */
+    max-width: 800px; /* Limit the width */
+    margin: 20px auto; /* Center the container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Noto Sans', sans-serif; /* Ensure consistent font */
+}
+
+.experience {
+    background-color: #fff; /* White background for each response */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners for responses */
+    padding: 15px; /* Space inside each response block */
+    margin-bottom: 15px; /* Space between responses */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+/* Styling for text within a response */
+.experience p {
+    margin: 0 0 10px; 
+    line-height: 1.5; 
+    color: #333; 
+}
+
+.experience p strong {
+    color: #444; 
+    font-weight: bold; 
 }
 
 /* About Page */
