@@ -51,7 +51,7 @@ After selecting a category of satisfaction, the button filters through the respo
 
 We encourage visitors to take the survey directly on the website by clicking the "share your story" tab. After submitting a response, a user will see their story appear on our map within 30 seconds.
 ### Survey Tab ###
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./img/surveySS.png)
 
 
 ## Acknowledgements

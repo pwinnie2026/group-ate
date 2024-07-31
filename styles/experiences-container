@@ -68,8 +68,6 @@
     font-weight: bold; 
 }
 
-
-
 .experience {
     background-color: #fff;
     border: 1px solid #ddd;

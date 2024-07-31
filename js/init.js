@@ -25,7 +25,6 @@ let allData = [];
 // this is to store data by category
 let categorizedData = [];
 
-
 const map = new maplibregl.Map({
     container: 'map', // container ID
     style: 'https://api.maptiler.com/maps/bright/style.json?key=JWrMVIrr3Jz2WGVMeDwh', // Your style URL
@@ -51,7 +50,7 @@ function addMarker(data) {
 
     // Adding marker only if student is a commuter student
     if (commuterStatus == "Yes") {
-        
+
         // Separate markers by zipcode
         // Insert code here
 
@@ -67,11 +66,11 @@ function addMarker(data) {
         }
 
         // Information pulled from questions 5 and 6 of survey for color of marker
-        let img; 
+        let img;
         if (fridgeAccess.includes('Yes')) {
             if (microwaveAccess.includes('Yes')) {
                 img = 'whiteMarker';
-            } else if(microwaveAccess.includes("No")) {
+            } else if (microwaveAccess.includes("No")) {
                 img = 'lightRedMarker';
             }
         } else if (fridgeAccess.includes("No")) {
@@ -81,58 +80,17 @@ function addMarker(data) {
                 img = 'redMarker';
         }
 
-
-    let marker = new maplibregl.Marker({
-         element: createMarkerElement(img)
-    })
-        .setLngLat([lng, lat])
-        .setPopup(new maplibregl.Popup()
-            .setHTML(popup_message))
-        .addTo(map)
-
-
-
-    // Add event listeners to the popup
-    marker.getPopup().on('open', () => {
-        if (flagForOpenPopup) {
-            return;
-        }
-        flagForOpenPopup = true;
-        console.log('checkForOpenPopup()');
-        console.log(checkIfExperienceContainerIsOpen());
-        let experiencesContainer = document.getElementById('experiences-container');
-        experiencesContainer.innerHTML = experience;
-        openNav()
-    });
-
-    marker.getPopup().on('close', () => {
-        let experiencesContainer = document.getElementById('experiences-container');
-        experiencesContainer.innerHTML = experience;
-        if (flagForOpenPopup == true){
-            return;   
-        }
-        else{
-            flagForOpenPopup = false;
-            closeNav()
-        }
-    });
-  }
-
-
-}
-function openNav() {
-    document.getElementById("experiences-container").style.width = "250px";
-  }
-  
-function closeNav() {
-    document.getElementById("experiences-container").style.width = "0";
-  }
-function checkIfExperienceContainerIsOpen() {
-    console.log('checkin')
-    return document.getElementById('experiences-container').style.display === 'block';
+        let marker = new maplibregl.Marker({
+            element: createMarkerElement(img)
+        })
+            .setLngLat([lng, lat])
+            .setPopup(new maplibregl.Popup()
+                .setHTML(popup_message))
+            .addTo(map)
+            console.log("added map markers");
+    }
 }
 
-let flagForOpenPopup = false;
 
 // Create custom markers
 function createMarkerElement(img) {
@@ -149,8 +107,7 @@ function createMarkerElement(img) {
     console.log(`Created marker element with image ${markerImg}`);
 
     return marker;
- }
-
+}
 
 const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTJWr_UjcZ-8GWHZr-9nsnwY9BJKCLE3k3X6IIyjta5b-ZpXxUGr8pZPK7H43cVYfcj_PGjKpiC7nQ2/pub?output=csv"
 
@@ -186,8 +143,7 @@ function setDataCategory(feature) {
     if (fridgeAccess == "Yes" && microwaveAccess == "Yes") {
         thisCategory = "satisfied";
     }
-    else if (fridgeAccess == "No" && microwaveAccess == "No")
-        {
+    else if (fridgeAccess == "No" && microwaveAccess == "No") {
         thisCategory = "unsatisfied";
     }
     else {
@@ -213,7 +169,7 @@ function processData(results) {
         let fridgeAccess = feature['Do you feel you have enough access to fridges for storing meals on campus? '];
         let microwaveAccess = feature['Do you feel you have enough access to microwaves for reheating meals on campus?'];
         let experience = feature['Expand on your experiences using refrigeration (storage) and microwave (reheating) on campus, if any'];
-        let satificationCategory = setDataCategory(feature);        
+        let satificationCategory = setDataCategory(feature);
         newFeature['lng'] = longitude;
         newFeature['lat'] = latitude;
         newFeature['commuterStatus'] = commuterStatus;
@@ -231,27 +187,27 @@ function processData(results) {
 };
 
 // summary counter for category tabs
-function summarizeCategorizedData(){
+function summarizeCategorizedData() {
     let satisfied = 0;
     let somewhat = 0;
     let unsatisfied = 0;
     console.log('allData')
     console.log(allData)
-    allData.forEach(feature=>{
-        if(feature.satificationCategory == "satisfied"){
+    allData.forEach(feature => {
+        if (feature.satificationCategory == "satisfied") {
             satisfied += 1;
         }
-        else if(feature.satificationCategory == "somewhat"){
+        else if (feature.satificationCategory == "somewhat") {
             somewhat += 1;
         }
-        else{
+        else {
             unsatisfied += 1;
         }
     })
 
-    let satisifiedCategory = {"category":"satisfied", "count":satisfied};
-    let somewhatCategory = {"category":"somewhat", "count":somewhat};
-    let unsatisfiedCategory = {"category":"unsatisfied", "count":unsatisfied};
+    let satisifiedCategory = { "category": "satisfied", "count": satisfied };
+    let somewhatCategory = { "category": "somewhat", "count": somewhat };
+    let unsatisfiedCategory = { "category": "unsatisfied", "count": unsatisfied };
     console.log('satisifiedCategory');
     console.log(satisifiedCategory);
     categorizedData.push(satisifiedCategory);
@@ -261,12 +217,12 @@ function summarizeCategorizedData(){
 }
 
 // Function to filter data based on cateogry selection 
-function filterData(event, category){
-    let filteredData = allData.filter(feature=>feature.satificationCategory == category);
+function filterData(event, category) {
+    let filteredData = allData.filter(feature => feature.satificationCategory == category);
     console.log(filteredData);
     // map.getSource('markers').setData(filteredData);
     toggleMarkersVisibility(category, true);
-    console.log('hi you clicked the '+category+' buttton')
+    console.log('hi you clicked the ' + category + ' buttton');
 }
 
 function toggleMarkersVisibility(category, isVisible) {
@@ -276,8 +232,7 @@ function toggleMarkersVisibility(category, isVisible) {
     });
 }
 
-
-function addToHtmlCategoryData(){
+function addToHtmlCategoryData() {
     let satisfiedTab = document.getElementById("tab-satisfied");
     satisfiedTab.innerHTML = "Satisfied: " + categorizedData[0].count;
     let somewhatTab = document.getElementById("tab-somewhat");
@@ -290,11 +245,5 @@ function addToHtmlCategoryData(){
     //     let thisTab = document.getElementById(`tab-${category.category}`);
     //     thisTab.innerHTML = `${category.category}: ${category.count}`;
     // })
-    
-}
-//add eventlistener to close the experiences container on click of the div
 
-document.getElementById('experiences-container').addEventListener('click', function(){
-    closeNav();
-    flagForOpenPopup = false;
-})
+}

@@ -91,9 +91,18 @@
         <!-- Left overview bar-->
         <div id="overview">    
             <div class="tab">
-                <button class="tablinks" onclick="filterData(event,'satified')" id="tab-satisfied">satisfied</button>
-                <button class="tablinks" onclick="filterData(event, 'unsatisfied')" id="tab-unsatisfied">unsatisfied</button>
-                <button class="tablinks" onclick="filterData(event, 'somewhat')" id="tab-somewhat">somewhat</button>
+                <div class="tab-row">
+                    <img class="tab-marker" src="markerTagPhotos/whiteMarker.png">
+                    <button class="tablinks" onclick="filterData(event,'satified')" id="tab-satisfied">satisfied</button>
+                </div>
+                <div class="tab-row">
+                    <img class="tab-marker" src="markerTagPhotos/lightRedMarker.png">
+                    <button class="tablinks" onclick="filterData(event, 'somewhat')" id="tab-somewhat">somewhat</button>
+                </div>
+                <div class="tab-row">
+                    <img class="tab-marker" src="markerTagPhotos/redMarker.png">
+                    <button class="tablinks" onclick="filterData(event, 'unsatisfied')" id="tab-unsatisfied">unsatisfied</button>
+                </div>
             </div>
         </div>
 
@@ -104,7 +113,7 @@
             <!--Displaying experiences with food facilities -->
             <div id="experiences-container">
                 <header class="experience-header">
-                    <h3>Commuter Student Experiences with UCLA's On-campus Food Storage Facilities</h3>
+                    <!-- <h3>Commuter Student Experiences with UCLA's On-campus Food Storage Facilities</h3> -->
                 </header>
                 <div id="categorystuff">
                 </div>
