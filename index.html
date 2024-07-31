@@ -22,6 +22,11 @@
     <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
+        <!-- Overlapping Markers JavaScript -->
+    <script src="https://unpkg.com/maplibre-randomize-overlapping-markers/dist/bundle.js"></script>
+    <!-- Overlapping Markers JavaScript -->
+    <script src="https://unpkg.com/maplibre-randomize-overlapping-markers/dist/bundle.js"></script>
+
     <!--Google Font: Noto-->
     <!--About Noto: https://fonts.google.com/noto?query=noto+sans-->
     <style>
@@ -92,16 +97,16 @@
         <div id="overview">    
             <div class="tab">
                 <div class="tab-row">
-                    <img class="tab-marker" src="markerTagPhotos/whiteMarker.png">
-                    <button class="tablinks" onclick="filterData(event,'satified')" id="tab-satisfied">satisfied</button>
+                    <img class="tab-marker" src="markerTagPhotos/whiteMarker.png" alt="White Marker">
+                    <button class="tablinks" onclick="filterData(event,'satisfied')" id="tab-satisfied">Satisfied</button>
                 </div>
                 <div class="tab-row">
-                    <img class="tab-marker" src="markerTagPhotos/lightRedMarker.png">
-                    <button class="tablinks" onclick="filterData(event, 'somewhat')" id="tab-somewhat">somewhat</button>
+                    <img class="tab-marker" src="markerTagPhotos/lightRedMarker.png" alt="Light Red Marker">
+                    <button class="tablinks" onclick="filterData(event, 'somewhat')" id="tab-somewhat">Somewhat</button>
                 </div>
                 <div class="tab-row">
-                    <img class="tab-marker" src="markerTagPhotos/redMarker.png">
-                    <button class="tablinks" onclick="filterData(event, 'unsatisfied')" id="tab-unsatisfied">unsatisfied</button>
+                    <img class="tab-marker" src="markerTagPhotos/redMarker.png" alt="Red Marker">
+                    <button class="tablinks" onclick="filterData(event, 'unsatisfied')" id="tab-unsatisfied">Unsatisfied</button>
                 </div>
             </div>
         </div>
@@ -109,14 +114,13 @@
         <!--Map-->
         <div id ="map-experiences-container">
             <div id="map"></div>
-
             <!--Displaying experiences with food facilities -->
-            <div id="experiences-container">
+            <div id="experiences-container" class="sidebar">
                 <header class="experience-header">
                     <!-- <h3>Commuter Student Experiences with UCLA's On-campus Food Storage Facilities</h3> -->
+                     <span id="close-sidebar" onclick="closeNav()">&times;</span>
                 </header>
-                <div id="categorystuff">
-                </div>
+                
                 <div class="experience">
 
                 </div>
@@ -128,8 +132,11 @@
         Copyright(2024)
     </div>
     <!--Init.JS Linkage-->
-    <script src="js/init.js"></script>
+    <script type="module" src="js/init.js"></script>
     <script src="js/display-experiences.js"></script>
+
+    <!-- Overlapping Markers JavaScript -->
+    <script src="https://unpkg.com/maplibre-randomize-overlapping-markers/dist/bundle.js"></script>
 </body>
 
 </html>

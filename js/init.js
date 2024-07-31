@@ -16,7 +16,6 @@ window.onclick = function (event) {
 }
 
 // MAP
-
 // declare variables
 let mapOptions = { 'centerLngLat': [-118.444, 34.0709], 'startingZoomLevel': 8 }
 
@@ -25,6 +24,7 @@ let allData = [];
 
 // this is to store data by category
 let categorizedData = [];
+
 
 const map = new maplibregl.Map({
     container: 'map', // container ID
@@ -51,11 +51,15 @@ function addMarker(data) {
 
     // Adding marker only if student is a commuter student
     if (commuterStatus == "Yes") {
-
+        
         // Separate markers by zipcode
         // Insert code here
 
-        popup_message = `Zipcode: ` + zipCode + `<br>`;
+        popup_message = `Zipcode: ` + zipCode + `<br><br>`;
+
+        // Add experience at the top to emphasize
+
+        popup_message += `<span style="color: red;"><strong>Student experience:</strong> ` + experience + `</span><br><br>`;
 
         // Information pulled from question 3 and 4 of survey for popup message of marker
         if (mealPrepStatus == "Yes") {
@@ -67,11 +71,11 @@ function addMarker(data) {
         }
 
         // Information pulled from questions 5 and 6 of survey for color of marker
-        let img;
+        let img; 
         if (fridgeAccess.includes('Yes')) {
             if (microwaveAccess.includes('Yes')) {
                 img = 'whiteMarker';
-            } else if (microwaveAccess.includes("No")) {
+            } else if(microwaveAccess.includes("No")) {
                 img = 'lightRedMarker';
             }
         } else if (fridgeAccess.includes("No")) {
@@ -80,16 +84,35 @@ function addMarker(data) {
             } else if (microwaveAccess.includes("No"))
                 img = 'redMarker';
         }
+    let offsetModification = 50;
+    const [modifiedLongitude, modifiedLatitude] = PointManager.addPointData(lng, lat, offsetModification);
+    let marker = new maplibregl.Marker({
+         element: createMarkerElement(img)
+    })
+        .setLngLat([modifiedLongitude, modifiedLatitude])
+        .setPopup(new maplibregl.Popup()
+            .setHTML(popup_message))
+        .addTo(map)
+    // Add event listeners to the popup
+   //marker.getPopup().on('open', () => {
+        //let experiencesContainer = document.getElementById('experiences-container');
+        //experiencesContainer.innerHTML = experience;
+        //experiencesContainer.style.display = 'block';
+        //experiencesContainer.classList.add('slide-in');
+        //experiencesContainer.classList.remove('slide-out');
+    //});
 
-        let marker = new maplibregl.Marker({
-            element: createMarkerElement(img)
-        })
-            .setLngLat([lng, lat])
-            .setPopup(new maplibregl.Popup()
-                .setHTML(popup_message))
-            .addTo(map)
-            console.log("added map markers");
+    //marker.getPopup().on('close', () => {
+        //let experiencesContainer = document.getElementById('experiences-container');
+        //experiencesContainer.classList.add('slide-out');
+        //experiencesContainer.classList.remove('slide-in');
+        //setTimeout(() => {
+            //experiencesContainer.style.display = 'none';
+        //}, 300); // Assuming the slide-out animation duration is 300ms
+    //});
+  //}
     }
+
 }
 
 // Create custom markers
@@ -107,7 +130,17 @@ function createMarkerElement(img) {
     console.log(`Created marker element with image ${markerImg}`);
 
     return marker;
+ }
+
+ function getCategoryClass(img) {
+    switch(img) {
+        case 'whiteMarker': return 'marker-whiteMarker';
+        case 'lightRedMarker': return 'marker-lightRedMarker';
+        case 'redMarker': return 'marker-redMarker';
+        default: return '';
+    }
 }
+
 
 const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTJWr_UjcZ-8GWHZr-9nsnwY9BJKCLE3k3X6IIyjta5b-ZpXxUGr8pZPK7H43cVYfcj_PGjKpiC7nQ2/pub?output=csv"
 
@@ -143,7 +176,8 @@ function setDataCategory(feature) {
     if (fridgeAccess == "Yes" && microwaveAccess == "Yes") {
         thisCategory = "satisfied";
     }
-    else if (fridgeAccess == "No" && microwaveAccess == "No") {
+    else if (fridgeAccess == "No" && microwaveAccess == "No")
+        {
         thisCategory = "unsatisfied";
     }
     else {
@@ -169,7 +203,7 @@ function processData(results) {
         let fridgeAccess = feature['Do you feel you have enough access to fridges for storing meals on campus? '];
         let microwaveAccess = feature['Do you feel you have enough access to microwaves for reheating meals on campus?'];
         let experience = feature['Expand on your experiences using refrigeration (storage) and microwave (reheating) on campus, if any'];
-        let satificationCategory = setDataCategory(feature);
+        let satificationCategory = setDataCategory(feature);        
         newFeature['lng'] = longitude;
         newFeature['lat'] = latitude;
         newFeature['commuterStatus'] = commuterStatus;
@@ -187,27 +221,27 @@ function processData(results) {
 };
 
 // summary counter for category tabs
-function summarizeCategorizedData() {
+function summarizeCategorizedData(){
     let satisfied = 0;
     let somewhat = 0;
     let unsatisfied = 0;
     console.log('allData')
     console.log(allData)
-    allData.forEach(feature => {
-        if (feature.satificationCategory == "satisfied") {
+    allData.forEach(feature=>{
+        if(feature.satificationCategory == "satisfied"){
             satisfied += 1;
         }
-        else if (feature.satificationCategory == "somewhat") {
+        else if(feature.satificationCategory == "somewhat"){
             somewhat += 1;
         }
-        else {
+        else{
             unsatisfied += 1;
         }
     })
 
-    let satisifiedCategory = { "category": "satisfied", "count": satisfied };
-    let somewhatCategory = { "category": "somewhat", "count": somewhat };
-    let unsatisfiedCategory = { "category": "unsatisfied", "count": unsatisfied };
+    let satisifiedCategory = {"category":"satisfied", "count":satisfied};
+    let somewhatCategory = {"category":"somewhat", "count":somewhat};
+    let unsatisfiedCategory = {"category":"unsatisfied", "count":unsatisfied};
     console.log('satisifiedCategory');
     console.log(satisifiedCategory);
     categorizedData.push(satisifiedCategory);
@@ -216,23 +250,42 @@ function summarizeCategorizedData() {
 
 }
 
+const categoryMap = {
+    'stasified': 'marker-whiteMarker',
+    'somewhat': 'marker-lightRedMarker',
+    'unstaisfied': 'marker-redMarker'
+};
+
 // Function to filter data based on cateogry selection 
-function filterData(event, category) {
-    let filteredData = allData.filter(feature => feature.satificationCategory == category);
-    console.log(filteredData);
+export function filterData(event, category){
+
+    console.log(`Filtering by cateogry: ${category}`);
+    //let filteredData = allData.filter(feature=>feature.satificationCategory === category);
+    console.log(filterData);
     // map.getSource('markers').setData(filteredData);
     toggleMarkersVisibility(category, true);
-    console.log('hi you clicked the ' + category + ' buttton');
+    console.log('hi you clicked the '+category+' buttton')
 }
 
-function toggleMarkersVisibility(category, isVisible) {
-    const markers = document.querySelectorAll(`.marker-${category}`);
-    markers.forEach(marker => {
-        marker.style.display = isVisible ? '' : 'none';
+window.filterData = filterData;
+
+function toggleMarkersVisibility(category) {
+    document.querySelectorAll(`.marker`).forEach(marker => {
+        marker.style.display = 'none';
     });
+
+    // Corresponding class from mapping object
+    const className = categoryMap[category];
+    if (className) {
+
+        document.querySelectorAll(`.${className}`).forEach(marker => {
+            marker.style.display = '';
+        });
+    }
 }
 
-function addToHtmlCategoryData() {
+
+function addToHtmlCategoryData(){
     let satisfiedTab = document.getElementById("tab-satisfied");
     satisfiedTab.innerHTML = "Satisfied: " + categorizedData[0].count;
     let somewhatTab = document.getElementById("tab-somewhat");
@@ -245,5 +298,5 @@ function addToHtmlCategoryData() {
     //     let thisTab = document.getElementById(`tab-${category.category}`);
     //     thisTab.innerHTML = `${category.category}: ${category.count}`;
     // })
-
+    
 }
