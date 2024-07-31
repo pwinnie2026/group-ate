@@ -6,10 +6,10 @@
 ## Table of Contents
 * [Objective](#Objective)
 * [Who is being empowered?](#Who-is-being-empowered?)
-* [Technologies Used](#technologies-used)
-* [How it can be repurposed](How-it-can-be-repurposed)
-* [Features](#features)
-* [Acknowledgements](#acknowledgements)
+* [Technologies Used](#Technologies-used)
+* [How it can be repurposed](#How-it-can-be-repurposed)
+* [Features](#Features)
+* [Acknowledgements](#Acknowledgements)
 * [Contact Information](#Contact-Information)
 
 
