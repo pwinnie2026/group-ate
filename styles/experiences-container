@@ -8,9 +8,6 @@
 	transform: translateX(-100%);
 }
 
-
-
-
 /* Student Responses Experience column */
 
 #experiences-container {
@@ -50,8 +47,6 @@
     color: #444; 
     font-weight: bold; 
 }
-
-
 
 .experience {
     background-color: #fff;
