@@ -53,7 +53,6 @@ We encourage visitors to take the survey directly on the website by clicking the
 ### Survey Tab ###
 ![Example screenshot](photo//surveySS.png)
 
-
 ## Acknowledgements
 We couldn't have created this project without the support of many people. An overwhelming thank you to Professor Albert Kochaphum for guiding us through every process, working tirelessly with us to get our website running, and being a fantastic professor overall! Thank you to the AAS 191A Summer 2024 Session A class for participating in our project through the survey and words of encouragement!
 
