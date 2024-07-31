@@ -60,10 +60,11 @@ header {
 
 #map-experiences-container {
     display: grid;
-    grid-template-areas: "maparea experiencesContainer";
+    grid-template-areas: "maparea";
     grid-template-columns: 1fr auto;
     height: 100vh;
 }
+
 
 #map {
     /* z-index: 99999; */

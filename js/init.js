@@ -89,27 +89,50 @@ function addMarker(data) {
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
         .addTo(map)
+
+
+
     // Add event listeners to the popup
     marker.getPopup().on('open', () => {
+        if (flagForOpenPopup) {
+            return;
+        }
+        flagForOpenPopup = true;
+        console.log('checkForOpenPopup()');
+        console.log(checkIfExperienceContainerIsOpen());
         let experiencesContainer = document.getElementById('experiences-container');
         experiencesContainer.innerHTML = experience;
-        experiencesContainer.style.display = 'block';
-        experiencesContainer.classList.add('slide-in');
-        experiencesContainer.classList.remove('slide-out');
+        openNav()
     });
 
     marker.getPopup().on('close', () => {
         let experiencesContainer = document.getElementById('experiences-container');
-        experiencesContainer.classList.add('slide-out');
-        experiencesContainer.classList.remove('slide-in');
-        setTimeout(() => {
-            experiencesContainer.style.display = 'none';
-        }, 300); // Assuming the slide-out animation duration is 300ms
+        experiencesContainer.innerHTML = experience;
+        if (flagForOpenPopup == true){
+            return;   
+        }
+        else{
+            flagForOpenPopup = false;
+            closeNav()
+        }
     });
   }
 
 
 }
+function openNav() {
+    document.getElementById("experiences-container").style.width = "250px";
+  }
+  
+function closeNav() {
+    document.getElementById("experiences-container").style.width = "0";
+  }
+function checkIfExperienceContainerIsOpen() {
+    console.log('checkin')
+    return document.getElementById('experiences-container').style.display === 'block';
+}
+
+let flagForOpenPopup = false;
 
 // Create custom markers
 function createMarkerElement(img) {
@@ -269,3 +292,9 @@ function addToHtmlCategoryData(){
     // })
     
 }
+//add eventlistener to close the experiences container on click of the div
+
+document.getElementById('experiences-container').addEventListener('click', function(){
+    closeNav();
+    flagForOpenPopup = false;
+})
