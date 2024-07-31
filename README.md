@@ -53,6 +53,19 @@ We encourage visitors to take the survey directly on the website by clicking the
 ### Survey Tab ###
 ![Example screenshot](photo//surveySS.png)
 
+
+## Room for Improvement
+Room for Improvement:
+- Our group initially wanted to have the narratives highlighted, further empowering the voices of the students, by having them appear on a separate popup window on the right of the map but the task was unachievable due to time constraints and coding difficulties
+- Markers with the same zip codes would overlap
+- Have the tab filter through the markers
+
+To Do:
+- Create a separate container for the user narratives
+- separate (randomize) overlapping markers
+- Add filtration javascript on categorical tabs
+
+
 ## Acknowledgements
 We couldn't have created this project without the support of many people. An overwhelming thank you to Professor Albert Kochaphum for guiding us through every process, working tirelessly with us to get our website running, and being a fantastic professor overall! Thank you to the AAS 191A Summer 2024 Session A class for participating in our project through the survey and words of encouragement!
 
